@@ -4,24 +4,6 @@
 
 /*
 
-### Layout:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-### Primary:
-
-- Orange: hsl(25, 97%, 53%)
-
-### Neutral:
-
-- White: hsl(0, 0%, 100%)
-- Light Grey: hsl(217, 12%, 63%)
-- Medium Grey: hsl(216, 12%, 54%)
-- Dark Blue: hsl(213, 19%, 18%)
-- Very Dark Blue: hsl(216, 12%, 8%)
-
-
 ### Typography system:
 
 FONT SIZE SYSTEM (px):
@@ -31,11 +13,6 @@ FONT SIZE SYSTEM (px):
 SPACING SYSTEM (px):
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
-
-### Font-Style:
-
-font-family: 'Overpass', sans-serif;
-
 ### Font size default setup: 
 -Default: 1 rem = 16px
 -Reset: 1 rem = 10px
@@ -43,23 +20,29 @@ font-family: 'Overpass', sans-serif;
 
 - !Font size (paragraph): 15px 
 
-### Font-weights:
-
-- Default: 400
-- Bold: 700
-
 ### Line-heights:
 - 0.8 for headings
 - 1.6 for paragraphs
 
-### Border-radius
-Default: 10px
 
 */
 
 /********************/
 /* General setting */
 /********************/
+
+:root {
+  --primmary-orange: hsl(25, 97%, 53%);
+  --nutral-white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --basic-font-size: 62.5%;
+  --font-family: "Overpass", sans-serif;
+  --normal: 400;
+  --bold: 700;
+}
 
 * {
   margin: 0;
@@ -69,77 +52,155 @@ Default: 10px
 
 html {
   /* font-size: 62.5%; */
+  font-family: var(--font-family);
+  color: var(--light-grey);
 }
 
 body {
-  background-color: hsl(216, 12%, 8%);
-  color: hsl(217, 12%, 63%);
-  font-family: "Overpass", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
+  background-color: var(--very-dark-blue);
   height: 100vh;
   line-height: 1.6;
-  margin: 5% auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*******************************/
-/* General Reusable Components */
+/* Card Section */
 /*******************************/
 
-.container {
+.card,
+.feedback {
   margin: 0 auto;
   padding: 0 2.5rem;
-  max-width: 650px;
-  background-color: hsl(213, 19%, 18%);
-  border-radius: 25px;
+  max-width: 400px;
+  background-color: var(--dark-blue);
+  border-radius: 20px;
+  position: relative;
+  padding: 2.4rem;
 }
 
-.card {
-  background-color: pink;
-  padding: 24px 0;
-}
+/* .feedback {
+  display: none;
+} */
 
-/*******************************/
-/*  Card Section */
-/*******************************/
+.star-rating {
+  background-color: hsla(216, 12%, 54%, 0.212);
+  /* background-color: var(--dark-blue);
+  filter: brightness(150%); */
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.68rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 41px;
+  left: 41px;
+  text-align: center;
+  filter: brightness(85%);
+}
 
 h1 {
-  color: hsl(0, 0%, 100%);
-  font-size: 36px;
-  font-weight: 700;
+  color: var(--nutral-white);
+  font-weight: var(--bold);
+  font-size: 24px;
+  padding-top: 64px;
+  margin-bottom: 8px;
 }
 
 .form-content {
   text-align: left;
-}
-
-.star-rating {
-  background-color: hsl(216, 12%, 54%);
-  width: 100px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border-radius: 50%;
+  margin-bottom: 24px;
 }
 
 .ratings {
+  list-style: none;
   display: flex;
+  justify-content: space-between;
+  color: var(--light-grey);
+  font-size: var(--basic-font-size);
+  font-weight: var(--normal);
+  margin-bottom: 24px;
 }
 
-/* .rating {
-  float: left;
-  justify-content: space-between;
-}  */
+.rating {
+  background-color: hsla(216, 12%, 54%, 0.212);
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.7rem;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.rating:hover {
+  background-color: var(--medium-grey);
+}
 
 .btn {
-  display: block;
   width: 100%;
   text-transform: uppercase;
-  background-color: hsl(25, 97%, 53%);
-  color: hsl(0, 0%, 100%);
+  background-color: var(--primmary-orange);
+  color: var(--nutral-white);
   letter-spacing: 3px;
   padding: 15px;
   border-radius: 100px;
   border: none;
-  font-size: 15px;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: var(--bold);
+}
+
+/*******************************/
+/* Feedback Section */
+/*******************************/
+
+.feedback-img {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.feedback-rating {
+  width: 165px;
+  height: 30px;
+  background-color: hsla(216, 12%, 54%, 0.212);
+  margin: auto;
+  padding: 0 6px;
+  border-radius: 20px;
+  color: var(--primary-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--normal);
+  font-size: var(--basic-font-size);
+  margin-bottom: 12px;
+}
+
+h2 {
+  text-align: center;
+  color: var(--nutral-white);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.feedback-message {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 36px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
