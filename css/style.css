@@ -1,0 +1,145 @@
+/********************/
+/* Style guide */
+/********************/
+
+/*
+
+### Layout:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+### Primary:
+
+- Orange: hsl(25, 97%, 53%)
+
+### Neutral:
+
+- White: hsl(0, 0%, 100%)
+- Light Grey: hsl(217, 12%, 63%)
+- Medium Grey: hsl(216, 12%, 54%)
+- Dark Blue: hsl(213, 19%, 18%)
+- Very Dark Blue: hsl(216, 12%, 8%)
+
+
+### Typography system:
+
+FONT SIZE SYSTEM (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+### Whitespace
+SPACING SYSTEM (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+### Font-Style:
+
+font-family: 'Overpass', sans-serif;
+
+### Font size default setup: 
+-Default: 1 rem = 16px
+-Reset: 1 rem = 10px
+10px/16px = 62.5%
+
+- !Font size (paragraph): 15px 
+
+### Font-weights:
+
+- Default: 400
+- Bold: 700
+
+### Line-heights:
+- 0.8 for headings
+- 1.6 for paragraphs
+
+### Border-radius
+Default: 10px
+
+*/
+
+/********************/
+/* General setting */
+/********************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 62.5%; */
+}
+
+body {
+  background-color: hsl(216, 12%, 8%);
+  color: hsl(217, 12%, 63%);
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  height: 100vh;
+  line-height: 1.6;
+  margin: 5% auto;
+}
+
+/*******************************/
+/* General Reusable Components */
+/*******************************/
+
+.container {
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  max-width: 650px;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 25px;
+}
+
+.card {
+  background-color: pink;
+  padding: 24px 0;
+}
+
+/*******************************/
+/*  Card Section */
+/*******************************/
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.form-content {
+  text-align: left;
+}
+
+.star-rating {
+  background-color: hsl(216, 12%, 54%);
+  width: 100px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.ratings {
+  display: flex;
+}
+
+/* .rating {
+  float: left;
+  justify-content: space-between;
+}  */
+
+.btn {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 3px;
+  padding: 15px;
+  border-radius: 100px;
+  border: none;
+  font-size: 15px;
+}

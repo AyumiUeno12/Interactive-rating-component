@@ -1,49 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <!-- Fav icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Css Style sheet -->
+    <link rel="stylesheet" href="/css/style.css" />
 
-  <!-- Rating state start -->
+    <!-- Font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  How did we do?
+    <!-- Js file -->
+    <script src="/js/script.js" defer></script>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    !
+    <title>Frontend Mentor | Interactive rating component</title>
 
-  1 2 3 4 5
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
 
-  Submit
+  <body>
+    <!-- Rating state start -->
+    <main class="container">
+      <section class="card">
+        <div class="star-rating">
+          <img src="/images/icon-star.svg" alt="Star icon" />
+        </div>
 
-  <!-- Rating state end -->
+        <div>
+          <h1>How did we do?</h1>
+          <p class="form-content">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </div>
 
-  <!-- Thank you state start -->
+        <ul calss="ratings">
+          <li class="rating">1</li>
+          <li class="rating">2</li>
+          <li class="rating">3</li>
+          <li class="rating">4</li>
+          <li class="rating">5</li>
+        </ul>
 
-  You selected <!-- Add rating here --> out of 5
+        <button class="btn">Submit</button>
+        <!-- Rating state end -->
+      </section>
 
-  Thank you!
+      <!-- Thank you state start -->
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
+      <section class="feedback">
+        <figure class="feedback-img">
+          <img src="/images/illustration-thank-you.svg" alt="" />
+        </figure>
 
-  <!-- Thank you state end -->
+        <div class="feedback-rating">
+          <!-- You selected
+           Add rating here 
+          out of 5 -->
+          <p id="selected-rating"></p>
+        </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <h2>Thank you!</h2>
+
+        <p class="feedback-message">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+
+        <!-- Thank you state end -->
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ayumi.U</a>.
+    </div>
+  </body>
 </html>
